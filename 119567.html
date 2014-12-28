@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="DreamPie Format" content="1">
+<title>DreamPie History</title>
+<style>
+body {
+  white-space: pre-wrap;
+  font-family: Courier New;
+  font-size: 10240;
+  color: #000000;
+  background-color: #d6d6d6;
+}
+span.folded {
+ display: none;
+}
+span.commandsep {
+ display: none;
+}
+span.command-defs {
+}
+span.command {
+}
+span.output {
+}
+span.fold-message {
+  color: #a7a7a7;
+  background-color: #003b6c;
+}
+span.message {
+  color: #19aa04;
+}
+span.prompt {
+  color: #b979f3;
+}
+span.exception {
+  color: #f21515;
+}
+span.result-ind {
+  color: #0000ff;
+}
+span.result {
+  color: #2c6060;
+}
+span.stderr {
+  color: #ff8080;
+}
+span.stdout {
+  color: #2472b8;
+}
+span.stdin {
+}
+span.bracket-match {
+  background-color: #00008b;
+}
+span.comment {
+  color: #8172a2;
+}
+span.number {
+  color: #f51dff;
+}
+span.string {
+  color: #c45a2a;
+}
+span.builtin {
+  color: #5d0a0a;
+}
+span.keyword {
+  color: #5d0ec5;
+}
+</style>
+</head>
+<body><span class="message">Python 2.7.3 (default, Aug  1 2012, 05:14:39) 
+[GCC 4.6.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+DreamPie 1.1.1
+</span><span class="command"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">from</span> ctypes <span class="keyword">import</span> *
+<span class="prompt">... </span><span class="keyword">import</span> sys
+<span class="prompt">... </span><span class="keyword">from</span> time <span class="keyword">import</span> sleep
+<span class="prompt">... </span><span class="comment">#Phidget specific imports</span>
+<span class="prompt">... </span><span class="keyword">from</span> Phidgets.PhidgetException <span class="keyword">import</span> PhidgetErrorCodes, PhidgetException
+<span class="prompt">... </span><span class="keyword">from</span> Phidgets.Events.Events <span class="keyword">import</span> AttachEventArgs, DetachEventArgs, ErrorEventArgs, CurrentChangeEventArgs, PositionChangeEventArgs, VelocityChangeEventArgs
+<span class="prompt">... </span><span class="keyword">from</span> Phidgets.Devices.AdvancedServo <span class="keyword">import</span> AdvancedServo
+<span class="prompt">... </span><span class="keyword">from</span> Phidgets.Devices.Servo <span class="keyword">import</span> ServoTypes
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo = AdvancedServo()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.openPhidget(<span class="number">119567</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.setServoType(<span class="number">0</span>, ServoTypes.PHIDGET_SERVO_DEFAULT)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.setVelocityLimit(<span class="number">0</span>, advancedServo.getVelocityMax(<span class="number">0</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.getSpeedRampingOn(<span class="number">0</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">0: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.getStopped(<span class="number">0</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">1: </span><span class="result">True
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.getEngaged(<span class="number">0</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">2: </span><span class="result">False
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.getAccelerationMax(<span class="number">0</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">3: </span><span class="result">320000.0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.setAcceleration(<span class="number">0</span>, advancedServo.getAccelerationMax(<span class="number">0</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.getVelocityMax(<span class="number">0</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">4: </span><span class="result">6400.0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.setVelocityLimit(<span class="number">0</span>, advancedServo.getVelocityMax(<span class="number">0</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.setEngaged(<span class="number">0</span>, <span class="builtin">True</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.setPosition(<span class="number">0</span>, advancedServo.getPositionMin(<span class="number">0</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.getPositionMin(<span class="number">0</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">5: </span><span class="result">0.0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.getPositionMax(<span class="number">0</span>)
+</span><span class="commandsep"></span><span class="output"><span class="result-ind">6: </span><span class="result">220.0
+</span></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.setPosition(<span class="number">0</span>, advancedServo.getPositionMax(<span class="number">0</span>))
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.setEngaged(<span class="number">0</span>, <span class="builtin">False</span>)
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span>advancedServo.closePhidget()
+</span><span class="commandsep"></span><span class="command"><span class="prompt">&gt;&gt;&gt; </span></span></body>
+</html>
